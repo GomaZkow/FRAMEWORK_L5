@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "id": 2,
+      "depth": "1.5m",
+      "width": "4m",
+      "length": "8m",
+      "temperature": "26°C"
+    },
+    {
+      "id": 3,
+      "depth": "1.5m",
+      "width": "4m",
+      "length": "8m",
+      "temperature": "26°C"
+    },
+    {
+      "id": 4,
+      "depth": "3m",
+      "width": "6m",
+      "length": "12m",
+      "temperature": "28°C"
+    }
+  ]
+}

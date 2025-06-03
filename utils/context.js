@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const createContext = (req, res) => {
   return {
     req,
@@ -40,3 +41,32 @@ const createContext = (req, res) => {
 };
 
 module.exports = createContext;
+=======
+module.exports = (req, res) => {
+  const params = {};
+  const urlParts = req && req.url ? req.url.split("/").filter(Boolean) : [];
+  if (urlParts.length > 1 && !isNaN(urlParts[urlParts.length - 1])) {
+    params.id = Number(urlParts[urlParts.length - 1]);
+  }
+  return {
+    req,
+    res,
+    params,
+    query: () => {
+      const url = req && req.url ? new URL(req.url, `http://${req.headers.host}`) : null;
+      const query = {};
+      if (url) {
+        url.searchParams.forEach((value, key) => {
+          query[key] = value;
+        });
+      }
+      return query;
+    },
+    json(data, statusCode = 200) {
+      res.setHeader("Content-Type", "application/json");
+      res.statusCode = statusCode;
+      res.end(JSON.stringify(data));
+    }
+  };
+};
+>>>>>>> Stashed changes

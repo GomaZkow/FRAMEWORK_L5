@@ -1,6 +1,14 @@
 {
   "dependencies": {
     "axios": "^1.8.4",
+<<<<<<< Updated upstream
     "node": "^20.19.0"
+=======
+    "node": "^20.19.0",
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "start": "node server.js"
+>>>>>>> Stashed changes
   }
 }
